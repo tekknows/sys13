@@ -67,6 +67,19 @@
         transform: translateY(-1px);
       }
 
+      .version {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0 0 16px;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: rgba(142, 106, 94, 0.2);
+        color: #f1d8ce;
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+
       .meta {
         margin-top: 28px;
         padding: 18px 20px;
@@ -90,17 +103,44 @@
       li + li {
         margin-top: 6px;
       }
+
+      .install {
+        margin-top: 24px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .install h2 {
+        margin: 0 0 10px;
+        font-size: 1.1rem;
+      }
+
+      .install ol {
+        margin: 0;
+        padding-left: 22px;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .install li + li {
+        margin-top: 6px;
+      }
+
+      .install code {
+        color: #fff;
+      }
     </style>
   </head>
   <body>
     <main class="card">
       <h1>SYS13 Extension</h1>
+      <div class="version" aria-label="Current extension version 1.4.0">Current version 1.4.0</div>
       <p>
-        Download the browser extension package as a ZIP file for installation or distribution.
+        Download the latest Managed Site Guard browser extension package for Chrome or Microsoft Edge.
       </p>
 
-      <a class="download-btn" href="./extension.zip" download="sys13-extension.zip">
-        Download ZIP
+      <a class="download-btn" href="./extension.zip" download="sys13-extension-1.4.0.zip">
+        Download version 1.4.0
       </a>
 
       <div class="meta">
@@ -112,6 +152,16 @@
           <li>Styles and assets</li>
         </ul>
       </div>
+
+      <section class="install" aria-labelledby="install-title">
+        <h2 id="install-title">Install in Chrome or Edge</h2>
+        <ol>
+          <li>Download and extract the ZIP file.</li>
+          <li>Open <code>chrome://extensions</code> or <code>edge://extensions</code>.</li>
+          <li>Turn on Developer mode, select <strong>Load unpacked</strong>, and choose the extracted extension folder containing <code>manifest.json</code>.</li>
+          <li>Open the extension options to configure the Supabase connection and device details.</li>
+        </ol>
+      </section>
     </main>
   </body>
 </html>
